@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { Quote } from './components/Quote';
+import { useFetch } from './hooks/useFetch';
 
-export default App;
+
+
+
+export const App = () => {
+
+	const { loading, data } = useFetch(`https://www.breakingbadapi.com/api/quotes`);
+    
+    const [randomIndex, setRandomIndex] = useState(0);
+
+    const handleClick = () => {
+        setRandomIndex(Math.floor(Math.random() * data.length))
+    }
+
+
+	return (
+		<div className="app">
+			{loading ? <p>Loading...</p> : <Quote randomNumber={randomIndex} data={data} />}
+            <button onClick={handleClick} >Random</button>
+		</div>
+	);
+};
