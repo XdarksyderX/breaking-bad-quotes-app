@@ -16,7 +16,7 @@ export const Quote = ({data, randomNumber}) => {
             return <img src={image[0]['img']} alt={author}/>
         }
         catch(err) {
-            return null;
+            return <h3 class="img_error">Image does not load :v</h3>;
         }
 
     }
@@ -24,8 +24,10 @@ export const Quote = ({data, randomNumber}) => {
 
     return (
         <div className="quote">
-            <h2>"{quote}"</h2>
-            <h3>~{author}</h3>
+            <div class="author_quote">
+                <h2>"{quote}"</h2>
+                <h3>~{author}</h3>
+            </div>
             {loadImage()}
         </div>
     )
