@@ -5,17 +5,32 @@
 
 body {
 	background-color: rgb(10, 10, 10);
+    border: 3px solid #9999;
 }
-
 
 .app {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
+h1{
+    text-align: center;
+    font-size: 40px;
+}
 
+h2{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 150px;
+}
+
+h3{
+    font-size: 14px;
+    width: 150px;
+    text-align: center;
+}
 
 .quote {
 	display: flex;
@@ -24,21 +39,40 @@ body {
 	justify-content: center;
 }
 
+.author_quote{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #9999;
+    padding: 12px;
+    margin: 10px;
+}
+
 .quote img {
+    padding: 5px;
     width: 300px;
+    border: 5px solid white;
+}
+
+.img_error{
+    padding: 15px;
+    width: 300px;
+    border: 5px solid white;
 }
 
 .app button {
-    margin-top: 30px;
+    margin: 20px;
     width: 300px;
-    border: 1px solid black;
-    background-color: rgb(204, 197, 188);
+    border: 2px solid #2b090f;
+    background-color: gray;
     color: rgb(10, 10, 10);
     font-size: 2rem;
 }
 
 .app button:hover {
-    background-color: rgb(10, 10, 10);
-    color: rgb(204, 197, 188);
+    background-color: white;
+    color: black;
     cursor: pointer;
 }
